@@ -1,148 +1,493 @@
-\documentclass{report}
+\documentclass[openany]{book}
 \usepackage{fancyhdr} % Required for custom headers
 \usepackage{lastpage} % Required to determine the last page for the footer
 \usepackage{extramarks} % Required for headers and footers
 \usepackage{graphicx} % Required to insert images
 \usepackage{amsmath}
 \usepackage{float}
-\usepackage{graphicx} 
+\usepackage{eso-pic,graphicx} 
+\usepackage{titlesec}
 %\usepackage{amsfont}
 %\usepackage{amssymb}
 \renewcommand\labelitemi{$\cdot$}
+%\renewcommand\sectionmark[1]{}
 \usepackage{multicol}
+\usepackage{blindtext}
+
 % Margins
 \topmargin=-0.5in
-\evensidemargin=0in
-\oddsidemargin=-0.5in
-\textwidth=7.5in
+\evensidemargin=0.15in
+\oddsidemargin=-0.15in
+\textwidth=6.5 in
 \textheight=9.0in
 \headsep=0.25in 
 
-
 \pagestyle{fancy}
 
-%\rhead{\textbf{Sabrina's Recipes}} % Top right header
-%\lhead{\textbf{Curry Stir Fry}}
-%\chead{ }
-%\title{Curry Stir Fry}
 
-\begin{document}
+\makeatletter
+\def\l@chapter#1#2{\pagebreak[3]
+   \vskip 1.0em plus 1pt  % space above chapter line
+   \@tempdima 1.5em       % width of box holding chapter number
+   \begingroup
+     \parindent \z@ \rightskip \@pnumwidth
+     \parfillskip -\@pnumwidth
+     \bfseries            % Boldface removed. 2006nm %% <= \bfseries uncommented again
+     \leavevmode          % TeX command to enter horizontal mode.
+     #1\hfil \hbox to\@pnumwidth{\hss #2}\medskip\par%% <= \medskip inserted
+   \endgroup}
+\makeatother
+
+
+\begin{document} 
+
+\AddToShipoutPictureBG*{\includegraphics[width=\paperwidth,height=\paperheight]{Olivebranchbordertrimmed.jpg}}
+\renewcommand{\contentsname}{\centering\Huge Contents}
 \tableofcontents
 
 
+
+\titleformat
+{\chapter}
+[block] % shape
+{\bfseries\Huge\itshape} % format
+{Chapter \ \thechapter} % label
+{0.5ex} % sep
+{
+    \vspace{60mm}
+    \rule{\textwidth}{2pt}
+    \vspace{60mm}
+    \centering
+} % before-code
+[
+\vspace{-0.5ex}%
+%\rule{\textwidth}{0.3pt}
+] % after-code
+
+
+%%\CHAPTER BREAK - BREAKFAST %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
 \chapter{Breakfast}
+\AddToShipoutPictureBG*{\includegraphics[width=\paperwidth,height=\paperheight]{Olivebranchbordertrimmed.jpg}}
 
-%\section{Egg and Ham Stir Fry}
-%\input{Breakfast Recipes/Egg and Ham Stir Fry/Egg and Ham Stir Fry}
-%\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SECTION FOR MAPLE GRANOLA CLUSTERS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Maple Granola Clusters}
+
+%%RECIPE%%
+\newpage
+\AddToShipoutPictureBG*{\includegraphics[width=\paperwidth,height=\paperheight]{v37-wit-48e-job129.jpg}}
+\thispagestyle{plain}
+\vspace*{-20mm}
+\section*{\centering \huge{Maple Granola Clusters}}
+\rule{\textwidth}{1pt}
+\addcontentsline{toc}{section}{\protect\numberline{}Maple Granola Clusters} 
 \input{Breakfast Recipes/Maple Granola Bunches/Maple Granola Bunches}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SECTION FOR APPLE OVERNIGHT OATS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%RECIPE%%
 \newpage
-\section{Cinnamon Apple Overnight Oats}
+\AddToShipoutPictureBG*{\includegraphics[width=\paperwidth,height=\paperheight]{v37-wit-48e-job129.jpg}}
+\thispagestyle{plain}
+\vspace*{-20mm}
+\section*{\centering{\huge{Cinnamon Apple Overnight Oats}}}
+\addcontentsline{toc}{section}{\protect\numberline{}Cinnamon Apple Overnight Oats}
+\rule{\textwidth}{1pt}
 \input{Breakfast Recipes/Overnight Oats/Cinnamon Apple Overnight Oats.tex}
+\AddToShipoutPictureBG*{\includegraphics[width=\paperwidth,height=\paperheight]{Olivebranchbordertrimmed.jpg}}
 
-\chapter{Chicken Recipes}
+
+%%\CHAPTER BREAK - CHICKEN RECIPES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{ Chicken Recipes}
+\AddToShipoutPictureBG*{\includegraphics[width=\paperwidth,height=\paperheight]{Olivebranchbordertrimmed.jpg}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SECTION FOR THAI RED CURRY %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%IMAGE%%
 \newpage
-\section{Curry Stir Fry}
-\input{Chicken Recipes/Curry Stir Fry/Curry Stir Fry}
-\newpage
-\section{Thai Red Curry}
+\begin{center}
+\AddToShipoutPictureBG*{\includegraphics[width=\paperwidth,height=\paperheight]{rm135-ploy-4a.jpg}}
+\thispagestyle{plain}
+\vspace*{30mm}
+\Huge{\textbf{Thai Red Curry}}
+\vspace{30mm}
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\textwidth]{Chicken Recipes/Thai Red Curry/IMG_0867.JPG}
+\end{figure}
+\end{center}
+
+
+%%RECIPE%%
+\newpage 
+\AddToShipoutPictureBG*{\includegraphics[width=\paperwidth,height=\paperheight]{v37-wit-48e-job129.jpg}}
+\thispagestyle{plain}
+\vspace*{-20mm}
+\section*{\centering{\huge{Thai Red Curry}}}
+\addcontentsline{toc}{section}{\protect\numberline{}Thai Red Curry}
+\rule{\textwidth}{1pt}
 \input{Chicken Recipes/Thai Red Curry/Thai Red Curry}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SECTION FOR CHICKEN MARSALA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%RECIPE%%
 \newpage 
-\section{Chicken Marsala}
+\AddToShipoutPictureBG*{\includegraphics[width=\paperwidth,height=\paperheight]{v37-wit-48e-job129.jpg}}
+\thispagestyle{plain}
+\vspace*{-20mm}
+\section*{\centering{\huge{Chicken Marsala}}}
+\addcontentsline{toc}{section}{\protect\numberline{}Chicken Marsala}
+\rule{\textwidth}{1pt}
 \input{Chicken Recipes/Chicken Marsala/Chicken Marsala}
- 
+
+
+%%\CHAPTER BREAK - BEEF RECIPES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \chapter{Beef Recipes}
+\AddToShipoutPictureBG*{\includegraphics[width=\paperwidth,height=\paperheight]{Olivebranchbordertrimmed.jpg}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SECTION FOR TEXAS CHILI %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%RECIPE%%
 \newpage
-\section{Chili}
+\AddToShipoutPictureBG*{\includegraphics[width=\paperwidth,height=\paperheight]{v37-wit-48e-job129.jpg}}
+\thispagestyle{plain}
+\vspace*{-20mm}
+\section*{\centering{\huge{Texas Chili}}}
+\addcontentsline{toc}{section}{\protect\numberline{}Texas Chili}
+\rule{\textwidth}{1pt}
 \input{Beef Recipes/Chili/Chili}
+
+
+
+%%\CHAPTER BREAK - SOUPS AND STEWS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \newpage
-
-
-
 \chapter{Soups and Stews}
-\newpage 
+\AddToShipoutPictureBG*{\includegraphics[width=\paperwidth,height=\paperheight]{Olivebranchbordertrimmed.jpg}}
 
-\section{Beef Stew}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SECTION FOR BEEF STEW %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%RECIPE%%
+\newpage 
+\AddToShipoutPictureBG*{\includegraphics[width=\paperwidth,height=\paperheight]{v37-wit-48e-job129.jpg}}
+\thispagestyle{plain}
+\vspace*{-20mm}
+\section*{\centering\huge{Beef Stew}}
+\addcontentsline{toc}{section}{\protect\numberline{}Beef Stew} 
+\rule{\textwidth}{1pt}
 \input{Soups & Stews/Beef Stew/Beef Stew}
-\newpage 
-\section{Baked Potato Soup}
-\input{Soups & Stews/Baked Potato Soup/Baked Potato Soup.tex}
-\newpage 
 
 
-\section{Green Chile Chicken Stew}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SECTION FOR BAKED POTATO SOUP %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%RECIPE%%
+\newpage 
+\AddToShipoutPictureBG*{\includegraphics[width=\paperwidth,height=\paperheight]{v37-wit-48e-job129.jpg}}
+\thispagestyle{plain}
+\vspace*{-20mm}
+\section*{\centering\huge{Baked Potato Soup}}
+\addcontentsline{toc}{section}{\protect\numberline{}Baked Potato Soup}
+\rule{\textwidth}{1pt}
+\input{Soups & Stews/Baked Potato Soup/Baked Potato Soup}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%SECTION FOR FRENCH LENTIL AND MUSHROOM SOUP %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%RECIPE%%
+\newpage 
+\AddToShipoutPictureBG*{\includegraphics[width=\paperwidth,height=\paperheight]{v37-wit-48e-job129.jpg}}
+\thispagestyle{plain}
+\vspace*{-20mm}
+\section*{\centering\huge{French Lentil and Mushroom Soup}}
+\addcontentsline{toc}{section}{\protect\numberline{}French Lentil and Mushroom Soup}
+\rule{\textwidth}{1pt}
+\input{Soups & Stews/French Lentil and Mushroom Soup/French Lentil and Mushroom Soup}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%SECTION FOR GREEN CHILE CHICKEN STEW  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%RECIPE%%
+\newpage
+\AddToShipoutPictureBG*{\includegraphics[width=\paperwidth,height=\paperheight]{v37-wit-48e-job129.jpg}}
+\thispagestyle{plain}
+\vspace*{-20mm}
+\section*{\centering\huge{Green Chile Chicken Stew}}
+\addcontentsline{toc}{section}{\protect\numberline{}Green Chile Chicken Stew}
+\rule{\textwidth}{1pt}
 \input{Soups & Stews/Green Chile Chicken Stew/Green Chile Chicken Stew}
 
-\chapter{Pasta}
-\newpage
 
-\section{Shrimp Scampi}
+%%\CHAPTER BREAK - PASTA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Pasta}
+\AddToShipoutPictureBG*{\includegraphics[width=\paperwidth,height=\paperheight]{Olivebranchbordertrimmed.jpg}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SECTION FOR BAKED ZITI %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%IMAGE%%
+\newpage 
+\AddToShipoutPictureBG*{\includegraphics[width=\paperwidth,height=\paperheight]{rm135-ploy-4a.jpg}}
+\thispagestyle{plain}
+\begin{center}
+\vspace*{30mm}
+\Huge{\textbf{Baked Ziti}}
+\end{center}
+\vspace*{20mm}
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\textwidth]{Pasta/Baked Ziti/Ziti.JPG}
+\end{figure}
+
+
+
+%%RECIPE 
+\newpage
+\AddToShipoutPictureBG*{\includegraphics[width=\paperwidth,height=\paperheight]{v37-wit-48e-job129.jpg}}
+\thispagestyle{plain}
+\vspace*{-20mm}
+\section*{\centering\huge{Baked Ziti}}
+\addcontentsline{toc}{section}{\protect\numberline{}Baked Ziti}
+\rule{\textwidth}{1pt}
+\input{Pasta/Baked Ziti/Baked Ziti}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SECTION FOR SHRIMP SCAMPI %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%RECIPE%%
+\AddToShipoutPictureBG*{\includegraphics[width=\paperwidth,height=\paperheight]{Olivebranchbordertrimmed.jpg}}
+\newpage
+\AddToShipoutPictureBG*{\includegraphics[width=\paperwidth,height=\paperheight]{v37-wit-48e-job129.jpg}}
+\thispagestyle{plain}
+\vspace*{-20mm}
+\section*{\centering\huge{Shrimp Scampi}}
+\addcontentsline{toc}{section}{\protect\numberline{}Shrimp Scampi}
+\rule{\textwidth}{1pt}
 \input{Pasta/Shrimp Scampi/Shrimp Scampi}
 
+
+%%\CHAPTER BREAK - SEAFOOD RECIPES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \chapter{Seafood Recipes}
+\AddToShipoutPictureBG*{\includegraphics[width=\paperwidth,height=\paperheight]{Olivebranchbordertrimmed.jpg}}
 \newpage
 
-\section{Shrimp Jambalaya}
-\input{Seafood Recipes/Shrimp Jambalaya/Shrimp Jambalaya}
-\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SECTION FOR GARLIC SHRIMP QUINOA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-\section{Garlic and Shrimp Quinoa}
+%%RECIPE%%
+\AddToShipoutPictureBG*{\includegraphics[width=\paperwidth,height=\paperheight]{v37-wit-48e-job129.jpg}}
+\thispagestyle{plain}
+\vspace*{-20mm}
+\section*{\centering\huge{Garlic and Shrimp Quinoa}}
+\addcontentsline{toc}{section}{\protect\numberline{}Garlic and Shrimp Quinoa}
+\rule{\textwidth}{1pt}
 \input{Seafood Recipes/Garlic and Shrimp Quinoa/Garlic and Shrimp Quinoa}
 
-\chapter{Vegetarian Recipes}
-\newpage 
-\section{Coconut Chickpea Curry}
-\input{Vegetarian Recipes/Coconut Chickpea Curry/Coconut Chickpea Curry}
-\newpage 
-%\section{Mujadara and Eggs}
-%\input{Vegetarian Recipes/Mujadara/Mujadara}
-%\newpage
 
-\section{Mushroom Lentil Soup}
-\input{Soups & Stews/Mushroom Lentil Soup/Mushroom Lentil Soup.tex}
+%%\CHAPTER BREAK - VEGETARIAN RECIPES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Vegetarian Recipes}
+\AddToShipoutPictureBG*{\includegraphics[width=\paperwidth,height=\paperheight]{Olivebranchbordertrimmed.jpg}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SECTION FOR MUSHROOM RISOTTO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%RECIPE
 \newpage
-%\section{Spiced Lentils and Rice}
-%\input{Vegetarian Recipes/Spiced Lentils and Rice/Spiced Lentils and Rice}
-%\newpage
-\section{Mushrooms and Rice}
-\input{Vegetarian Recipes/Mushrooms and Rice/Mushrooms and Rice}
-\newpage
-%\section{Sesame Garlic Ramen}
-%\input{Vegetarian Recipes/Sesame Garlic Ramen Noodles/Sesame Garlic Ramen}
-%\newpage
-\section{Mushroom Risotto}
+\AddToShipoutPictureBG*{\includegraphics[width=\paperwidth,height=\paperheight]{v37-wit-48e-job129.jpg}}
+\thispagestyle{plain}
+\vspace*{-20mm}
+\section*{\centering\huge{Mushroom Risotto}}
+\addcontentsline{toc}{section}{\protect\numberline{}Mushroom Risotto}
+\rule{\textwidth}{1pt}
 \input{Vegetarian Recipes/Mushroom Risotto/Mushroom Risotto.tex}
 
 
+%%\CHAPTER BREAK - BAKED GOODS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \chapter{Baked Goods}
+\AddToShipoutPictureBG*{\includegraphics[width=\paperwidth,height=\paperheight]{Olivebranchbordertrimmed.jpg}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SECTION FOR ZUCCHINI BREAD %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%RECIPE%%
 \newpage
-\section{Zucchini Bread}
+\AddToShipoutPictureBG*{\includegraphics[width=\paperwidth,height=\paperheight]{v37-wit-48e-job129.jpg}}
+\thispagestyle{plain}
+\vspace*{-20mm}
+\section*{\centering\huge{Zucchini Bread}}
+\addcontentsline{toc}{section}{\protect\numberline{}Zucchini Bread}
+\rule{\textwidth}{1pt}
 \input{Baked Goods/Zucchini Bread/Zucchini Bread}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SECTION FOR BANANA BREAD %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%RECIPE%%
 \newpage
-\section{Banana Bread}
+\AddToShipoutPictureBG*{\includegraphics[width=\paperwidth,height=\paperheight]{v37-wit-48e-job129.jpg}}
+\thispagestyle{plain}
+\vspace*{-20mm}
+\section*{\centering\huge{Banana Bread}}
+\addcontentsline{toc}{section}{\protect\numberline{}Banana Bread}
+\rule{\textwidth}{1pt}
 \input{Baked Goods/Banana Bread/Banana Bread}
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SECTION FOR LEMON LOAF %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%RECIPE%%
 \newpage
-\section{Lemon Loaf}
+\AddToShipoutPictureBG*{\includegraphics[width=\paperwidth,height=\paperheight]{v37-wit-48e-job129.jpg}}
+\thispagestyle{plain}
+\vspace*{-20mm}
+\section*{\centering\huge{Lemon Loaf}}
+\addcontentsline{toc}{section}{\protect\numberline{}Lemon Loaf}
+\rule{\textwidth}{1pt}
 \input{Baked Goods/Lemon Loaf/Lemon Loaf}
 
-\newpage 
-\section{Cranberry Tart}
-\input{Baked Goods/Cranberry Tart/Cranberry Tart}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SECTION FOR CRANBERRY COBBLER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%RECIPE%%
+\newpage 
+\AddToShipoutPictureBG*{\includegraphics[width=\paperwidth,height=\paperheight]{v37-wit-48e-job129.jpg}}
+\thispagestyle{plain}
+\vspace*{-20mm}
+\section*{\centering\huge{Cranberry Cobbler}}
+\addcontentsline{toc}{section}{\protect\numberline{}Cranberry Tart}
+\rule{\textwidth}{1pt}
+\input{Baked Goods/Cranberry Cobbler/Cranberry Tart}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SECTION FOR BLONDIES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%RECIPE%%
 \newpage
-\section{Blondies}
+\AddToShipoutPictureBG*{\includegraphics[width=\paperwidth,height=\paperheight]{v37-wit-48e-job129.jpg}}
+\thispagestyle{plain}
+\vspace*{-20mm}
+\section*{\centering\huge{Blondies}}
+\addcontentsline{toc}{section}{\protect\numberline{}Blondies}
+\rule{\textwidth}{1pt}
 \input{Baked Goods/Blondies/Blondies.tex}
 
+
+
+%%\CHAPTER BREAK - DESSERTS AND DRINKS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \chapter{Desserts and Drinks}
+\AddToShipoutPictureBG*{\includegraphics[width=\paperwidth,height=\paperheight]{Olivebranchbordertrimmed.jpg}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SECTION FOR CHAI TEA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%RECIPE%%
 \newpage 
-\section{Chai}
-\input{Deserts and Drinks/Chai Tea/Chai Tea}
+\AddToShipoutPictureBG*{\includegraphics[width=\paperwidth,height=\paperheight]{v37-wit-48e-job129.jpg}}
+\thispagestyle{plain}
+\vspace*{-20mm}
+\section*{\centering\huge{Chai}}
+\addcontentsline{toc}{section}{\protect\numberline{}Chai}
+\rule{\textwidth}{1pt}
+\input{Desserts and Drinks/Chai Tea/Chai Tea}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SECTION FOR CHOCOLATE FUDGE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%IMAGE%%
+\newpage 
+\AddToShipoutPictureBG*{\includegraphics[width=\paperwidth,height=\paperheight]{rm135-ploy-4a.jpg}}
+\thispagestyle{plain}
+\begin{center}
+\vspace*{30mm}
+\Huge{\textbf{Chocolate Fudge}}
+\end{center}
+\vspace*{20mm}
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\textwidth]{Desserts and Drinks/Fudge/IMG_0869.JPG}
+\end{figure}
+
+%%RECIPE%%
+\newpage 
+\AddToShipoutPictureBG*{\includegraphics[width=\paperwidth,height=\paperheight]{v37-wit-48e-job129.jpg}}
+\thispagestyle{plain}
+\vspace*{-20mm}
+\section*{\centering\huge{Chocolate Fudge}}
+\addcontentsline{toc}{section}{\protect\numberline{}Chocolate Fudge}
+\rule{\textwidth}{1pt}
+\input{Desserts and Drinks/Fudge/Chocolate Fudge}
+\clearpage
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SECTION FOR LEMON POSSETS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%IMAGE%%
+\newpage 
+\AddToShipoutPictureBG*{\includegraphics[width=\paperwidth,height=\paperheight]{rm135-ploy-4a.jpg}}
+\thispagestyle{plain}
+\begin{center}
+\vspace*{30mm}
+\Huge{\textbf{Lemon Possets}}
+\end{center}
+\vspace*{20mm}
+\includegraphics[scale=0.09]{Desserts and Drinks/Lemon Possets/IMG_0617.JPG}
+
+
+%%RECIPE%%
+\newpage
+\AddToShipoutPictureBG*{\includegraphics[width=\paperwidth,height=\paperheight]{v37-wit-48e-job129.jpg}}
+\thispagestyle{plain}
+\vspace*{-20mm}
+\section*{\centering\huge{Lemon Possets}}
+\addcontentsline{toc}{section}{\protect\numberline{}Lemon Possets}
+\rule{\textwidth}{1pt}
+\input{Desserts and Drinks/Lemon Possets/Lemon Possets}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SECTION FOR SANDED ALMONDS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%RECIPE%%
+\newpage
+\AddToShipoutPictureBG*{\includegraphics[width=\paperwidth,height=\paperheight]{v37-wit-48e-job129.jpg}}
+\thispagestyle{plain}
+\vspace*{-20mm}
+\section*{\centering\huge{Sanded Almonds}}
+\addcontentsline{toc}{section}{\protect\numberline{}Sanded Almonds}
+\rule{\textwidth}{1pt}
+\input{Desserts and Drinks/Sanded Almonds/Sanded Almonds}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SECTION FOR HOT CHOCOLATE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%RECIPE%%
+\newpage
+\AddToShipoutPictureBG*{\includegraphics[width=\paperwidth,height=\paperheight]{v37-wit-48e-job129.jpg}}
+\thispagestyle{plain}
+\vspace*{-20mm}
+\section*{\centering\huge{Hot Chocolate}}
+\addcontentsline{toc}{section}{\protect\numberline{}Hot Chocolate}
+\rule{\textwidth}{1pt}
+\input{Desserts and Drinks/Hot Chocolate/Hot Chocolate}
+
 
 \end{document}
